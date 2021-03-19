@@ -6,6 +6,7 @@ import {
   FirebaseDatabaseNode,
 } from "@react-firebase/database";
 import { firebaseConfig } from "../firebase";
+import PintaLeds from "./PintaLeds";
 
 export default class LedList extends Component {
     constructor(props){
@@ -26,13 +27,8 @@ export default class LedList extends Component {
               if (value === null || typeof value === "undefined") return null;
               const keys = Object.keys(value);
               const values = Object.values(value);
-              return values.map((value, key) => (
-                  <div>
-                      <label>{value}</label>                      
-                  </div>                  
-                  
-            ));
-              //return <AutoComplete items={valuesWithKeys} />;
+             
+              return <PintaLeds items={values} />;
             }}
           </FirebaseDatabaseNode>
         </FirebaseDatabaseProvider>
