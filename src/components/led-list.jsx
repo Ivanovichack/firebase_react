@@ -27,8 +27,8 @@ export default class LedList extends Component {
               if (value === null || typeof value === "undefined") return null;
               const keys = Object.keys(value);
               const values = Object.values(value);
-             
-              return <PintaLeds items={values} />;
+              
+              return <PintaLeds items={values}/>
             }}
           </FirebaseDatabaseNode>
         </FirebaseDatabaseProvider>

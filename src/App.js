@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import LedList from './components/led-list'
+import Otro from "./components/Otro";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
         <div className="container mt-3">
           <h2>React Firebase RGB Led - NodeMCU ESP</h2>
           <LedList />
-          
+          <Otro />
         </div>
     </div>
   );

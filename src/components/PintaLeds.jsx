@@ -1,37 +1,29 @@
 import React, { Component } from 'react';
-
+import ChangeValues from '../components/ChangeValues'
 class PintaLeds extends Component {    
-    
-    constructor(){
-        let a=0,b=0,c=0;
-    }
 
     state = {
-        r: this.props.items[0],
+        r: this.props.items[2],
         g: this.props.items[1],
-        b: this.props.items[2]
+        b: this.props.items[0]
     }
 
     
     render(){
         return(
+            <div>
             <div className="row">
-                <div className="col-md-4">
-                    <input type="button" className="btn btn-danger" value={this.state.r}/>
-                    <input type="button" className="btn btn-success" value={this.state.g}/>
-                    <input type="button" className="btn btn-info" value={this.state.b}/>
+                <div className="mb-2 col-md-4">
+                    <input type="button" className="btn btn-danger bot form-control" value={this.props.items[2]}/>                    
                 </div>
-                <div className="col-md-6">
-                    <div className="row">                        
-                        <input type="range" min="0" max="255" step="1" class="form-range" value={this.a}/>
-                    </div>
-                    <div className="row">
-                        <input type="range" min="0" max="255" step="1" class="form-range" />
-                    </div>
-                    <div className="row">
-                        <input type="range" min="0" max="255" step="1" class="form-range" />
-                    </div>
-                </div>                
+                <div className="mb-2 col-md-4">                    
+                    <input type="button" className="btn btn-success form-control" value={this.props.items[1]}/>                    
+                </div>
+                <div className="mb-2 col-md-4">                    
+                    <input type="button" className="btn btn-info form-control" value={this.props.items[0]}/>
+                </div>
+            </div>
+            <ChangeValues init={this.props.items}/>
             </div>
         );
     }
