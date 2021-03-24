@@ -29,44 +29,39 @@ class ChangeValues extends Component {
     handleChangeB = (event) => {
         this.setState({
             ValB: event.target.value
-        });
-        <Circulo valR={this.state.ValR} valG={this.state.ValG} valB={this.state.ValB}/>
+        });        
     }
 
     render() {
         return (
+            <div>
             <FirebaseDatabaseMutation type="set" path="led/">
                 {({ runMutation }) => (
                     <div>
                     <form className="container"
-                        onChange={async ev => {
-                            
+                        onChange={async ev => {                            
                             await runMutation({
                                 r: Number(this.state.ValR),
                                 g: Number(this.state.ValG),
                                 b: Number(this.state.ValB)
-                            });
-                            
-                            
+                            });                                                        
                         }}
                     >
                         <div className="mb-2 row">                            
-                            <input onChange={this.handleChangeR} type="range" min="1" max="255" step="1" class="slider-red anchor custom-range" defaultValue={this.state.ValR}/>                            
+                            <input onChange={this.handleChangeR} type="range" min="1" max="255" step="1" class="slider-red anchor custom-range" defaultValue={this.props.init[2]}/>                            
                         </div>
                         <div className="mb-2 row">                            
-                            <input onChange={this.handleChangeG} type="range" min="1" max="255" step="1" class="slider-green anchor custom-range" defaultValue={this.state.ValG}/>                            
+                            <input onChange={this.handleChangeG} type="range" min="1" max="255" step="1" class="slider-green anchor custom-range" defaultValue={this.props.init[1]}/>                            
                         </div>
                         <div className="row">                            
-                            <input onChange={this.handleChangeB} type="range" min="1" max="255" step="1" class="anchor custom-range" defaultValue={this.state.ValB}/>                            
+                            <input onChange={this.handleChangeB} type="range" min="1" max="255" step="1" class="anchor custom-range" defaultValue={this.props.init[0]}/>                            
                         </div>
-                        <div style={{ background: `rgb(${this.state.ValR},${this.state.ValG},${this.state.ValB})` }} className="intro">
-                            
-                        </div>
-                    </form>
-                        <Circulo valR={this.state.ValR} valG={this.state.ValG} valB={this.state.ValB}/>
+                    </form>                    
                     </div>
                 )}
             </FirebaseDatabaseMutation>
+            <Circulo valR={this.props.init[2]} valG={this.props.init[1]} valB={this.props.init[0]}/>
+            </div>
         );
     }
 }
