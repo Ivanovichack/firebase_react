@@ -1,10 +1,13 @@
-# Vas a necesitar instalar las siguientes librerias
+# Vas a necesitar instalar las siguientes librerías
 * [Firebase](https://react-firebase-js.com/)
 * [Boostrap](https://react-bootstrap.github.io/)
 * [React Bootstrap Range Slider](https://www.npmjs.com/package/react-bootstrap-range-slider)
 
 Para instalarlas hay que ejecuar los siguientes comandos:
 ## `npm i firebase`
+## `npm i @react-firebase/database`
+## `npm i react-bootstrap-range-slider`
+## `npm i react-bootstrap bootstrap`
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
