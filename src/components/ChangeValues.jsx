@@ -3,6 +3,7 @@ import { Component } from 'react';
 import { FirebaseDatabaseMutation } from "@react-firebase/database";
 import './style.css'
 import Circulo from './Circulo';
+import RangeSlider from 'react-bootstrap-range-slider';
 
 class ChangeValues extends Component {
     
@@ -55,6 +56,8 @@ class ChangeValues extends Component {
                         </div>
                         <div className="row">                            
                             <input onChange={this.handleChangeB} type="range" min="1" max="255" step="1" class="anchor custom-range" defaultValue={this.props.init[0]}/>                            
+                        </div>
+                        <div className="row">
                         </div>
                     </form>                    
                     </div>
